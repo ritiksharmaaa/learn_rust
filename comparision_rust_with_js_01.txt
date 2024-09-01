@@ -1,0 +1,216 @@
+# basic comparsion 
+
+# rust is compiling  lang 
+--means if we want to run the rust code we need to compli first than it rum 
+-- in js we have a code we can directly run 
+
+command to compile rust 
+
+cargo file.rs -- after  cargo run to run a code 
+after this we have getting a tstget file inside we  have a build file inside file we have code file which we have ti run by manually going to file section or we just run via cargo run . 
+
+
+#  memory management -ownership model 
+
+-- rust stand out from other language just because of memory management 
+
+-- in js we dont have a more control on memory on java script 
+
+example we have  a 
+
+def fun (){
+  const obj = {};
+
+
+printName(obj);
+console.log(obj)
+}
+
+
+function printName(obj){
+console.log(obj)
+obj.name = "Ritik Sharma"  here change reflect upper log 
+}
+
+printName()
+
+
+-- so here problem is if we pass an obj we ae getting original file reference so one we change it will reflect every where .
+which is good but but it may be create some bug 
+
+
+------in c and c++ you have a full control on memory management
+
+
+
+here rust is choose to b hybrid model - or ownership model 
+
+what happening when you compile rust check you have allow to access those memory or not on compile time . 
+
+
+ex : - 
+
+pub mode memeory {
+    pub fn my_fun () {
+    let fname : Sting = String ::from("ritik")
+
+    print_name(fname); ---- here fname ownere tranfer to printfunction 
+printin!("name os{} , fname ) -- we getting error . but we can access multipel time before tranfering  to othter function .
+
+--- no if i want to again want to get th fname in this scope we getting error 
+because rust var have only one owner 
+
+
+
+
+}
+}
+
+pub fn print_name(name : String ){
+printIn!("nae id {}" , name )
+
+
+
+-------let take an example to understandd dhow rust work with ownershil veriable.
+
+
+rust tell every object have there only one owner and the variable is valid until his parent function scope is valid
+
+mean we get acceccc as much as time we want to use varibal ein the functional scope but one we pass the variab to another function here wholw variable is sent to another function and it run after it complter it kill the object so after killing if we want the varibale after calling function we are unable to get because we lost the varibale .
+
+
+
+if anyone want to use that variable 
+
+functionis owner and objec is car function run mean it run car after you give car to another owner or function you can get access back those variable 
+
+here if we want  to give to borrow acces to antoher function 
+so borrow the variable to another function we have to pass the variable into another function 
+
+we pass like that 
+
+printName(&variabelname)
+
+inside function 
+
+printName(name: &str)  her we are borrowing  a variable  here variable have refrese of the obj so if passing function scope kill we are not loos the obj and we can use it inside the scope of parent function 
+
+
+--- here our friend want to modfied our car they dont because they borrow the car from we so it only use not modified it for modification we have permission to owner 
+
+we have to decide we have to give ownership and references 
+
+---we have a more in ownership and refreshes but this is just a basline introduction 
+
+
+
+-------------------immutable 
+
+by default in rust all the variable are immutable in js we have based on situation we have create mutable or immutable variable in rust 
+
+bydefault 
+
+let fname : String = Srting ::from("Piyush") 
+--checking can we chage the variable or not  
+
+fname = String::from("Ritik Sharma")
+
+
+--for mutable  variable we have to use it this key word
+
+let mut fname : string = String from ("Ritik")
+
+if parent function is createa mutable var but after passing  refrence to another  function we can change the variable even the refrence variable is mutable 
+
+
+we can give permission to modeified to variable we have to pass a reffrece mutable 
+
+let mut fname:string = string ::from("Ritik Sharma ")
+
+printName(name :&mut str){
+  name.push(ch: "1")
+name.push_str(string : "something Else"
+}
+
+
+
+package manager in rust ---------------
+
+
+in rust we have a cargo 
+
+here we have a cargo.toml 
+cargo.lock 
+
+
+command --
+
+cargo add pakage name it install it 
+
+cargo build on top best part of npm 
+
+-- in normal language we have package but in rust we have crates 
+
+
+
+js is dynamically typed language or loosely typed languaguage 
+
+rust is strongly type language 
+
+we can give type or not it auto detect based on the decalare 
+
+
+rust  is very stric language towads erro 
+
+you can t copile it if it has erroe 
+
+
+
+-----------------error handelling 
+
+
+in js we have try catch or throw error 
+
+
+in rust ---- we have two type of error 
+1 recoverable error 
+2 unrecoverable error 
+
+
+unrecoverb; eroor mean if error cam furthirre code will never execute it crash 
+but wwe can convert to recoverable error insted throw u32 which is error like something we have ti use tenerary operator like something 
+
+result<u32 , &str>{
+if y == 0 {
+return Err("canot divide by zero ")}
+ok(x/y) }
+
+match keyord also used . 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
